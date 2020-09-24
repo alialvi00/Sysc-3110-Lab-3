@@ -4,10 +4,10 @@ public class AddressBook {
 
     ArrayList<BuddyInfo> buddyColl = new ArrayList<>();
 
-    BuddyInfo buddy2 = new BuddyInfo("Mustafa");
-    BuddyInfo buddy3 = new BuddyInfo("Mohammed");
-    BuddyInfo buddy4 = new BuddyInfo("Michael");
-    BuddyInfo buddy5 = new BuddyInfo("John");
+    BuddyInfo buddy2 = new BuddyInfo("Mustafa", "Ottawa","613");
+    BuddyInfo buddy3 = new BuddyInfo("Mohammed","Toronto","647");
+    BuddyInfo buddy4 = new BuddyInfo("Michael","Scarborough","416");
+    BuddyInfo buddy5 = new BuddyInfo("John","Mississauga","905");
 
     public AddressBook(){
         buddyColl.add(buddy2);
@@ -20,13 +20,12 @@ public class AddressBook {
         System.out.println("Address Book");
     }
 
-    public void addBuddy(String name){
-        BuddyInfo newBuddy = new BuddyInfo(name);
+    public void addBuddy(BuddyInfo newBuddy){
         buddyColl.add(newBuddy);
     }
 
-    public void removeBuddy(String name){
-        buddyColl.removeIf(newBuddy -> newBuddy.getName().equals(name));
+    public void removeBuddy(BuddyInfo newBuddy){
+        buddyColl.remove(newBuddy);
     }
 }
 
