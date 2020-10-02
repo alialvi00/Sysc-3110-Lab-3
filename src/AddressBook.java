@@ -2,26 +2,29 @@ import java.util.*;
 
 public class AddressBook {
 
-    ArrayList<BuddyInfo> buddyColl = new ArrayList<>();
+    ArrayList<BuddyInfo> buddyColl;
 
-    BuddyInfo buddy2 = new BuddyInfo("Mustafa", "Ottawa","613");
-    BuddyInfo buddy3 = new BuddyInfo("Mohammed","Toronto","647");
-    BuddyInfo buddy4 = new BuddyInfo("Michael","Scarborough","416");
-    BuddyInfo buddy5 = new BuddyInfo("John","Mississauga","905");
+    public AddressBook(){
+        buddyColl = new ArrayList<>();
+    }
 
     public static void main(String[] args){
-        System.out.println("Address Book");
+        BuddyInfo buddy = new BuddyInfo("Tom","Carleton","613");
         AddressBook addy = new AddressBook();
-        addy.addBuddy(addy.buddy2);
-        addy.removeBuddy(addy.buddy2);
+        addy.addBuddy(buddy);
+        addy.removeBuddy(0);
     }
 
     public void addBuddy(BuddyInfo newBuddy){
-        buddyColl.add(newBuddy);
+        if(newBuddy != null)
+            buddyColl.add(newBuddy);
     }
 
-    public void removeBuddy(BuddyInfo newBuddy){
-        buddyColl.remove(newBuddy);
+    public BuddyInfo removeBuddy(int index){
+        if(index >= 0 && index < buddyColl.size()){
+            return buddyColl.remove(index);
+        }
+        return null;
     }
 }
 
