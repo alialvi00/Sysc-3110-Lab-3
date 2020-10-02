@@ -9,7 +9,7 @@ public class AddressBook {
     }
 
     public static void main(String[] args){
-        BuddyInfo buddy = new BuddyInfo("Tom","Carleton","613");
+        BuddyInfo buddy = new BuddyInfo("Tom","Carleton",613);
         AddressBook addy = new AddressBook();
         addy.addBuddy(buddy);
         addy.removeBuddy(0);
